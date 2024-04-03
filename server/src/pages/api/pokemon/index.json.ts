@@ -1,7 +1,8 @@
 import type { APIRoute } from "astro"
+import { getPokemonList } from "../../../services/pokemon"
 
 export const GET: APIRoute = async (context) => {
-  return new Response(null, {
+  return new Response(JSON.stringify(getPokemonList), {
     headers: {
       'content-type': 'application/json',
       'Access-Control-Allow-Origin': '*',
